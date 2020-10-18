@@ -12,12 +12,18 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Object supportActionBar;            //remoção toolbar
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {    //remoção toolbar
+            getSupportActionBar().hide();
+        }
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
